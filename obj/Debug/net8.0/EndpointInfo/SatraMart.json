@@ -1,0 +1,249 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "SatraMart",
+    "version": "1.0"
+  },
+  "paths": {
+    "/VATInformation/get": {
+      "get": {
+        "tags": [
+          "VATInformation"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/VATInformation/add": {
+      "post": {
+        "tags": [
+          "VATInformation"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VATInformation"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VATInformation"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/VATInformation"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/VATInformation/add-with-identity": {
+      "post": {
+        "tags": [
+          "VATInformation"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VATInformation"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VATInformation"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/VATInformation"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/WeatherForecast": {
+      "get": {
+        "tags": [
+          "WeatherForecast"
+        ],
+        "operationId": "GetWeatherForecast",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "VATInformation": {
+        "type": "object",
+        "properties": {
+          "combination": {
+            "type": "string",
+            "nullable": true
+          },
+          "custrequest": {
+            "type": "string",
+            "nullable": true
+          },
+          "formformat": {
+            "type": "string",
+            "nullable": true
+          },
+          "formnum": {
+            "type": "string",
+            "nullable": true
+          },
+          "invoicedate": {
+            "type": "string",
+            "nullable": true
+          },
+          "invoicenum": {
+            "type": "string",
+            "nullable": true
+          },
+          "purchasername": {
+            "type": "string",
+            "nullable": true
+          },
+          "retailtransactiontable": {
+            "type": "string",
+            "nullable": true
+          },
+          "retailtransrecidgroup": {
+            "type": "string",
+            "nullable": true
+          },
+          "serialnum": {
+            "type": "string",
+            "nullable": true
+          },
+          "taxcompanyaddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "taxcompanyname": {
+            "type": "string",
+            "nullable": true
+          },
+          "taxregnum": {
+            "type": "string",
+            "nullable": true
+          },
+          "taxtranstxt": {
+            "type": "string",
+            "nullable": true
+          },
+          "transtime": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataareaid": {
+            "type": "string",
+            "nullable": true
+          },
+          "recversion": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "partition": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "recid": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "phone": {
+            "type": "string",
+            "nullable": true
+          },
+          "custaccount": {
+            "type": "string",
+            "nullable": true
+          },
+          "cancel": {
+            "type": "boolean",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "WeatherForecast": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "temperatureC": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "temperatureF": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "summary": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

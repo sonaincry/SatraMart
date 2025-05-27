@@ -1,0 +1,6 @@
+@SatraMart_HostAddress = http://localhost:5252
+
+GET {{SatraMart_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
