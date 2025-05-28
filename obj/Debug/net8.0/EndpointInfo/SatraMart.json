@@ -17,6 +17,28 @@
         }
       }
     },
+    "/VATInformation/details": {
+      "get": {
+        "tags": [
+          "VATInformation"
+        ],
+        "parameters": [
+          {
+            "name": "recid",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/VATInformation/add": {
       "post": {
         "tags": [

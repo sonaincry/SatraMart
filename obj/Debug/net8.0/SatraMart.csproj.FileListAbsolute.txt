@@ -43,3 +43,4 @@ C:\Users\Nos\Desktop\Code\.NET\SatraMart\SatraMart\obj\Debug\net8.0\refint\Satra
 C:\Users\Nos\Desktop\Code\.NET\SatraMart\SatraMart\obj\Debug\net8.0\SatraMart.pdb
 C:\Users\Nos\Desktop\Code\.NET\SatraMart\SatraMart\obj\Debug\net8.0\SatraMart.genruntimeconfig.cache
 C:\Users\Nos\Desktop\Code\.NET\SatraMart\SatraMart\obj\Debug\net8.0\ref\SatraMart.dll
+C:\Users\Nos\Desktop\Code\.NET\SatraMart\SatraMart\obj\Debug\net8.0\SatraMart.sourcelink.json

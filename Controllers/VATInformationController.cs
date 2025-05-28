@@ -35,6 +35,41 @@ namespace SatraMart.Controllers
             }
         }
 
+        [HttpGet]
+        [Route("details")]
+        public IActionResult GetByRecId([FromQuery] long recid)
+        {
+            try
+            {
+                using (var conn = new SqlConnection(_connString))
+                {
+                    conn.Open();
+
+                    var query = @"
+                SELECT [COMBINATION], [CUSTREQUEST], [FORMFORMAT], [FORMNUM],
+                       TRY_CAST([INVOICEDATE] AS DATETIME) AS INVOICEDATE,
+                       [INVOICENUM], [PURCHASERNAME], [RETAILTRANSACTIONTABLE], 
+                       [RETAILTRANSRECIDGROUP], [SERIALNUM], [TAXCOMPANYADDRESS],
+                       [TAXCOMPANYNAME], [TAXREGNUM], [TAXTRANSTXT], [TRANSTIME],
+                       [DATAAREAID], [RECVERSION], [PARTITION], [RECID], [EMAIL],
+                       [PHONE], [CUSTACCOUNT], [CANCEL]
+                FROM [SatraMart].[dbo].[VASRetailTransVATInformation]
+                WHERE [RECID] = @RecId";
+
+                    var result = conn.QueryFirstOrDefault<VATInformation>(query, new { RecId = recid });
+
+                    if (result == null)
+                        return NotFound($"No VAT record found for RECID: {recid}");
+
+                    return Ok(result);
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
+
         [HttpPost("add")]
         public IActionResult AddVatInfo([FromBody] VATInformation data)
         {
@@ -43,8 +78,6 @@ namespace SatraMart.Controllers
                 using (var conn = new SqlConnection(_connString))
                 {
                     conn.Open();
-
-                    // Insert query - RECID will be auto-generated if it's an identity column
                     var insertQuery = @"
                         INSERT INTO [SatraMart].[dbo].[VASRetailTransVATInformation] 
                         ([COMBINATION], [CUSTREQUEST], [FORMFORMAT], [FORMNUM], [INVOICEDATE],
@@ -76,8 +109,6 @@ namespace SatraMart.Controllers
                 return StatusCode(500, new { status = "Error", message = ex.Message });
             }
         }
-
-        // Alternative version if RECID is an identity column that auto-increments
         [HttpPost("add-with-identity")]
         public IActionResult AddVatInfoWithIdentity([FromBody] VATInformation data)
         {

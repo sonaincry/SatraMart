@@ -33,6 +33,22 @@
   },
   {
     "ContainingType": "SatraMart.Controllers.VATInformationController",
+    "Method": "GetByRecId",
+    "RelativePath": "VATInformation/details",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "recid",
+        "Type": "System.Int64",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SatraMart.Controllers.VATInformationController",
     "Method": "GetTop100",
     "RelativePath": "VATInformation/get",
     "HttpMethod": "GET",
