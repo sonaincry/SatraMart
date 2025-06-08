@@ -1,5 +1,4 @@
-﻿using BusinessObject;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Data.SqlClient;
 using Dapper;
 

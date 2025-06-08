@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SatraMart")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6ec22674e3cf539c5ec9ceb1b7477125eef252cd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fdcc2315a109ba595d046d8ca310a3cd3ccfe6ad")]
 [assembly: System.Reflection.AssemblyProductAttribute("SatraMart")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SatraMart")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
